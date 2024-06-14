@@ -1,0 +1,626 @@
+/*Estilos para Ruta perfecta */
+:root {
+    --primary-color: #081226;
+    --accent-color: #FFD920;
+    --bg-dark-color: #1B2459; 
+    --secondary-color: #F2F2F2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 16px;
+}
+
+body {
+    font-weight: 400;
+    color: var(--primary-color);
+    line-height: 1.5;
+    font-family: "Fira Sans", sans-serif; 
+}
+
+input,select,textarea{
+   font-family: "Fira Sans", sans-serif; 
+}
+
+h1, h2, h3 {   
+    font-weight: 700;
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--primary-color);
+}
+
+a:hover {
+    border-bottom: 1px solid var(--primary-color);
+}
+
+cite {
+    font-style: normal;
+}
+
+abbr {
+    text-decoration: none;
+}
+
+h1{
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+.home h1,.banner {
+    font-size: 3rem;
+    font-weight:bold;
+}
+
+h2{
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    text-align:center;
+}
+
+ul {
+    padding-left: 1rem;
+    list-style-type: square;
+}
+ul li {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+figure {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+figcaption {
+    text-align: center;
+    padding-top: 1rem;
+    font-size: 0.75rem;
+}
+
+/****************************
+Imágenes del sitio web
+*****************************/
+img.fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+/*Clase para esconder un elemento que será visible únicamente a los lectores de pantalla (aplicado para mejorar la accesibilidad)*/
+.sr {
+    position:absolute;
+    height:1px;    
+    width:1px;    
+    overflow:hidden;    
+    clip:rect(1px, 1px, 1px, 1px);
+}
+.sr:focus {
+    height:auto;
+    border:1px solid var(--primary-color);
+    width:20rem;
+    text-align:center;
+    bottom:8rem;  
+    left:50%;
+    margin-left:-10rem;
+    background:var(--accent-color);
+    color:var(--primary-color);
+    padding:1rem 3rem;
+    font-size:1.1rem;
+    font-weight:bold;
+    display:block;
+    overflow:visible;
+    clip:auto;
+    z-index:10;
+}
+
+/****************************
+Contenedores del sitio
+*****************************/
+header {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background: var(--bg-dark-color);
+}
+
+footer {
+    padding-top: 1rem;
+    padding-bottom: 1rem;    
+    background-color: var(--bg-dark-color);
+    color: var(--secondary-color);
+}
+
+main {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+/*
+Las reglas que van a continuación consiguen que los contenidos dentro del elemento de class .container se adapten a los diversos dispositivos.
+La class .container define un contenedor que ocupa el 100% de la pantalla del dispositivo, con un margen interior por la izquierda y por la derecha de 16 píxeles, y márgenes por la izquierda y por la derecha automáticos, para conseguir un diseño centrado.
+A continuació utilizamos media queries, un módulo de CSS3 que permite adaptar la representación del contenido a las características del dispositivo y que se estudia en la unidad 5.
+Con las 4 media queries utilizadas indicamos la anchura máxima que el .container tiene que tener cuando los dispositivos tengan la anchura mínima indicada por el punto de ruptura (breakpoint).
+*/
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    width: 100%;
+}
+  
+@media (min-width: 576px) {
+    .container {
+      max-width: 540px;
+    }
+}
+  
+@media (min-width: 768px) {
+    .container {
+      max-width: 720px;
+    }
+}
+  
+@media (min-width: 992px) {
+    .container {
+      max-width: 960px;
+    }
+}
+  
+@media (min-width: 1200px) {
+    .container {
+      max-width: 1140px;
+    }
+}
+
+/****************************
+Titular del sitio
+*****************************/
+
+.banner {
+    color: var(--secondary-color) 
+}
+.banner a {
+    color: inherit;
+    border: none;
+}
+.banner span {
+    font-weight: 200;
+}
+
+
+/*************************
+Contenidos del footer
+**************************/
+footer {
+    font-size: 0.8rem;
+    color: var(--secondary-color);
+}
+
+footer p {
+    font-size: inherit;
+    margin-bottom: 0.5rem;
+}
+
+footer a {
+    color: inherit;
+    border: none;
+}
+
+footer a:hover {
+    border: none;
+    color: var(--accent-color);
+}
+
+footer ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+footer ul li {
+    display: inline-block;
+    font-size: 0.8rem;
+    padding-right: 0.25rem;
+}
+
+footer ul li::after {
+    content: "·";
+    padding-left: 0.5rem;
+}
+footer ul li:last-child::after {
+    content: "";
+    padding-left: 0.5rem;
+}
+
+
+/****************************
+Menú de navegación del sitio
+*****************************/
+nav {
+    text-align: left;
+    color: var(--secondary-color);
+}
+nav ul {
+    padding-left: 0;
+}
+nav ul li {
+    display: inline-block;
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-left: 2rem;
+}
+nav ul li:first-child {
+    margin-left: 0;
+}
+nav ul li a {
+    color: inherit;
+    border: none;
+}
+nav ul li a:hover {
+    border: none;
+    color: var(--accent-color);
+}
+nav li.active {
+    border-bottom: 3px solid var(--accent-color);
+}
+
+/****************************
+Página de inicio
+*****************************/
+body.home {
+    background-color: var(--bg-dark-color);
+    background-image: url(../img/bg-home.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    color: var(--secondary-color);
+}
+
+.bg-container {
+    background-image: url(../img/isologo-home.png);
+    background-repeat: no-repeat;
+    background-size: 100px 100px;
+    background-position: right top;
+    min-height: 300px;
+}
+
+body.home header {
+    background-color: transparent;
+    height: 10vh;
+}
+
+body.home main {
+    padding-top: 10vh;
+    height: 70vh;
+}
+
+body.home footer {
+    background-color: transparent;
+    height: 20vh;
+}
+
+body.home nav {
+    text-align: right;
+}
+
+body.home h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+body.home h1 span {
+    display: block;
+    font-weight: 200;
+}
+
+body.home a {
+    color: inherit;
+    border: none;
+}
+
+body.home a:hover {
+    border: none;
+    color: var(--accent-color);
+}
+
+body.home nav ul {
+    padding-left: 0;
+    margin-left: 0;
+}
+
+body.home nav ul li {
+    font-size: 1.3rem;
+}
+
+body.home main p {
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+body.home footer p {
+    margin-bottom: 0.5rem;
+}
+
+/*Esta regla permite que el tamaño de la letra de estos dos elementos de la página de inicio tengan un tamaño mayor cuando tengamos una pantalla de una anchura mínima de 992 píxeles*/
+
+@media (min-width: 992px) {
+    body.home h1 {
+        font-size: 9rem;
+    }
+    body.home main p {
+        font-size: 2.3rem;
+    }
+    .bg-container {
+        background-size: 300px 300px;
+    }
+}
+
+/****************************
+Página reseñas
+****************************/
+article.review {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-top: 1px solid var(--primary-color);
+}
+article.review h3 {
+    text-align: center;
+}
+article.review p {
+    width: 100%;
+    max-width:800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+a.more {
+    display: inline-block;
+    margin-top: 0;
+}
+a.more::after {
+    content: '\003E';  
+    padding-left: 0.5rem;
+}
+
+/***************************
+Destinos
+***************************/
+
+span.season {
+    background-color: var(--accent-color);
+    padding: 0.25rem 1rem;
+}
+
+div.call-to-action {
+    background-color: var(--secondary-color);
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+div.call-to-action p {
+    font-size: 2rem;
+    margin-bottom: 0;
+}
+
+/*Esta clase añadirá una barra de desplazamiento horizontal cuando sea necesario para que los usuarios que vean la tabla en dispositivos pequeños puedan desplazarse hacia la derecha para ver el contenido completo de la tabla */
+.tableFluid {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 2rem;
+}
+
+table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    border: 1px solid var(--primary-color);
+}
+
+caption {
+    font-size: 1.5rem;
+    border-top: 1px solid var(--primary-color);
+    border-left: 1px solid var(--primary-color);
+    border-right: 1px solid var(--primary-color);
+}
+
+td, th {
+    padding: 0.5rem;
+    font-size: 1.1rem;
+    vertical-align: top;
+    text-align: left;
+    border: 1px solid var(--primary-color);
+}
+
+th[scope="col"]:first-of-type {
+    width: 25%;
+}
+
+th[scope="col"]:last-of-type {
+    width: 50%;
+}
+
+th[scope="col"] {
+    font-weight: normal;
+    font-size: 1rem;
+    text-align: left;
+    background-color: var(--secondary-color);
+}
+
+th[scope="row"] {
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+thead tr {
+    border-top: 1px solid var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
+}
+
+tfoot {
+    border-bottom: 1px solid var(--primary-color);
+    border-top: 1px solid var(--primary-color);
+}
+
+tfoot td {
+    text-align: left;
+    font-size: 0.8rem;
+}
+
+
+/****************************
+Formulario
+*****************************/
+form {
+    margin: 1.5rem auto;
+    padding: 1.5rem;
+    border-radius: 5px;
+}
+
+form ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+fieldset {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    background-color: var(--secondary-color);
+}
+
+legend {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+form abbr {
+    color: #ff0000;
+    font-size: 1rem;
+}
+
+input:not([type="radio"]):not([type="checkbox"]),
+select,
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--bg-dark-color);
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    background-color: #FFFFFF;
+    outline: none;
+}
+
+textarea {
+    height: 10rem;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+ul.radio-group:first-child {
+    padding-top: 1rem;
+}
+
+.radio-group label,
+input[type="checkbox"]+label {
+    display: inline;
+}
+
+.outFieldset {
+    padding: 1rem;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+}
+.outFieldset p {
+    font-size: 0.8rem;
+}
+
+button {
+    display: inline-block;
+    width: auto;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    padding: 1rem 1.5rem;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    border: none;
+    text-transform: uppercase;
+    appearance: none; 
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: var(--bg-dark-color);
+    color: var(--secondary-color);
+}
+
+/* Estilos para la máscara de entrada */
+input[type="text"]:required:user-invalid,
+input[type="email"]:required:user-invalid,
+input[type="tel"]:required:user-invalid,
+input[type="date"]:required:user-invalid,
+select:required:user-invalid {
+    border: 1px solid #FF0000;
+}
+
+input[type="text"]:required:valid,
+input[type="email"]:required:valid,
+input[type="tel"]:required:valid,
+input[type="date"]:required:valid,
+select:required:valid {
+    border: 1px solid #4CAF50;
+}
+
+input:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus {
+    background-color: var(--secondary-color);
+}
+/* Cuando tengamos como mínimo 768px en el viewport, interesará que los elementos con estas clases se muestre el uno al lado del otro y adapten su anchura*/
+@media (min-width: 768px) {
+    form {
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    li.two-col {
+        display: inline-block;
+        width: 49%;
+    }
+
+    li.two-col+li.two-col {
+        margin-left: 0.2rem;
+    }
+}
+
+
+
+
+
+
